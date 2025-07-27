@@ -17,20 +17,19 @@ def display_conversion_menu():
 def main():
     while True:
         display_conversion_menu()
-        choice = input("Enter your choice: ")
-
-        if choice == '1':
-            fahrenheit = float(input("Enter temperature in Fahrenheit: "))
-            celsius = convert_to_celsius(fahrenheit)
-            print(f"{fahrenheit}°F is {celsius:.2f}°C")
-        elif choice == '2':
-            celsius = float(input("Enter temperature in Celsius: "))
-            fahrenheit = convert_to_fahrenheit(celsius)
-            print(f"{celsius}°C is {fahrenheit:.2f}°F")
-        elif choice == '3':
+        temprature = input("Enter the temperature to convert: ")
+        degree = input("Is this temperature in Celsius or Fahrenheit? (C/F):").strip().upper()
+        if degree not in ['C', 'F']:
+            print("Invalid input. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
+            continue
+        if degree == 'C':
+            converted_temp = convert_to_fahrenheit(float(temprature))
+            print(f"{temprature}°C is {converted_temp:.2f}°F")
+        else:
+            converted_temp = convert_to_celsius(float(temprature))
+            print(f"{temprature}°F is {converted_temp:.2f}°C")
+        if input("Do you want to perform another conversion? (yes/no): ").strip().lower() != 'yes':
             print("Exiting the Temperature Conversion Tool. Goodbye!")
             break
-        else:
-            print("Invalid choice. Please try again.")
 if __name__ == "__main__":
     main()
