@@ -1,9 +1,5 @@
 def perform_operation (num1, num2, operation):
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
     try:
-        num1 = float(input("Enter the first number: "))
-        num2 = float(input("Enter the second number: "))
-        
         if operation == 'add':
             result = num1 + num2
         elif operation == 'subtract':
@@ -17,6 +13,6 @@ def perform_operation (num1, num2, operation):
         else:
             return "Error: Invalid operation."
 
-        return f"The result of {operation}ing {num1} and {num2} is {result}."
+        return result
     except ValueError:
         return "Error: Please enter valid numbers."
