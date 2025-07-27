@@ -20,7 +20,7 @@ def main():
         temprature = input("Enter the temperature to convert: ")
         degree = input("Is this temperature in Celsius or Fahrenheit? (C/F):").strip().upper()
         if degree not in ['C', 'F']:
-            print("Invalid input. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
+            print("Invalid temperature. Please enter a numeric value.")
             continue
         if degree == 'C':
             converted_temp = convert_to_fahrenheit(float(temprature))
