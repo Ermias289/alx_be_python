@@ -1,4 +1,4 @@
-weather = input("Enter the weather condition (sunny, rainy, snowy): ").strip().lower()
+weather = input("What's the weather like today? (sunny/rainy/cold): ").strip().lower()
 
 def provide_weather_advice(weather):
     if weather == 'sunny':
